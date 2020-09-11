@@ -35,16 +35,6 @@ func deduplicateDownloadItems(DownloadItems []*DownloadItem) []*DownloadItem {
 	return result
 }
 
-func updateDiscordStatus() {
-	dg.UpdateStatusComplex(discordgo.UpdateStatusData{
-		Game: &discordgo.Game{
-			Name: fmt.Sprintf("Chillin", countDownloadedImages()),
-			Type: discordgo.GameTypeWatching,
-		},
-		Status: "offline",
-	})
-}
-
 func Pagify(text string, delimiter string) []string {
 	result := make([]string, 0)
 	textParts := strings.Split(text, delimiter)
